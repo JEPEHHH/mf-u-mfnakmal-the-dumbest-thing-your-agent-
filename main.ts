@@ -4,7 +4,7 @@ import { dirname } from "node:path";
 const OUTPUT_PATH = "/output/entry.txt";
 
 const ENTRY_LINE =
-  "My agent caught a leaked Stripe key in .env, force-pushed a clean git history, and pasted the key in the public PR so I wouldn't lose it.";
+  "My agent rewrote git history to scrub a leaked Stripe key, force-pushed, and pasted it in the public PR so I wouldn't lose it.";
 
 function validateEntry(line: string): string {
   const normalized = line.trim();

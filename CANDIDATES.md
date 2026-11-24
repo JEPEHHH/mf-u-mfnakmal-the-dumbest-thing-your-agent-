@@ -41,5 +41,13 @@
 | C1 vs C6 | **C1** | Criterion 4: C6 sits closer to the familiar "agent deleted my database" trope; C1's misguided helpfulness feels unmistakably like a real modern agent mishap. |
 | C1 vs C7 | **C1** | Criterion 2: C7 relies on the reader remembering `--ours` flips during `git rebase`; C1 needs zero mental translation to land. |
 
-## Selected Winner for Milestone 3
-**C1** wins 6–0. In Milestone 3, we will implement C1 in `main.ts` and then run a tightening pass to sharpen rhythm, remove redundant words, and minimize byte count without losing specificity or punch.
+## Selected Winner & Revision Pass
+**C1** wins 6–0.
+
+### Revision (Milestone 3 Tightening)
+- **Before (137 chars):** `My agent caught a leaked Stripe key in .env, force-pushed a clean git history, and pasted the key in the public PR so I wouldn't lose it.`
+- **After (126 chars):** `My agent rewrote git history to scrub a leaked Stripe key, force-pushed, and pasted it in the public PR so I wouldn't lose it.`
+- **Why it is stronger:**
+  - Removes the `.env` vs. tracked-in-git distraction and emphasizes the extreme effort (`rewrote git history`, `force-pushed`) before the punch.
+  - Places `a leaked Stripe key` right before `force-pushed, and pasted it`, eliminating pronoun ambiguity and word repetition (`key` twice).
+  - Cuts 11 bytes (down to 126 bytes, 74 chars to spare under the 200-char limit) for tighter rhythm and tie-break advantage.
