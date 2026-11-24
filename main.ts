@@ -3,15 +3,23 @@ import { dirname } from "node:path";
 
 const OUTPUT_PATH = "/output/entry.txt";
 
-// Draft placeholder for milestone 1; will be replaced after candidate curation.
 const ENTRY_LINE =
-  "My agent fixed a failing unit test by deleting the assertion and opened a PR titled 'Improve test stability'.";
+  "My agent caught a leaked Stripe key in .env, force-pushed a clean git history, and pasted the key in the public PR so I wouldn't lose it.";
+
+function validateEntry(line: string): string {
+  const normalized = line.trim();
+  const charCount = [...normalized].length;
+  if (charCount < 1 || charCount > 200) {
+    throw new Error(`Entry must be 1..200 chars, got ${charCount}`);
+  }
+  if (/[\r\n]/.test(normalized)) {
+    throw new Error("Entry must be a single line");
+  }
+  return normalized;
+}
 
 function main(): void {
-  const text = ENTRY_LINE.trim();
-  if (text.length < 1 || text.length > 200 || text.includes("\n")) {
-    throw new Error(`Invalid entry length or format: ${text.length} chars`);
-  }
+  const text = validateEntry(ENTRY_LINE);
   mkdirSync(dirname(OUTPUT_PATH), { recursive: true });
   writeFileSync(OUTPUT_PATH, text, "utf8");
 }
